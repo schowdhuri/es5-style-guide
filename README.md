@@ -37,6 +37,7 @@
     + `null`
     + `undefined`
 
+
     ```javascript
     var foo = 1;
     var bar = foo;
@@ -50,6 +51,7 @@
     + `object`
     + `array`
     + `function`
+
 
     ```javascript
     var foo = [1, 2];
@@ -74,7 +76,7 @@
     var item = {};
     ```
 
-  - Don"t use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won"t work in IE8. [More info](https://github.com/airbnb/javascript/issues/61).
+  - Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61).
 
     ```javascript
     // bad
@@ -271,7 +273,7 @@
     ```
 
   - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
-  - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262"s note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // bad
@@ -356,7 +358,7 @@
     ```
 
   - Use one `var` declaration per variable.
-    It"s easier to add new variable declarations this way, and you never have
+    It's easier to add new variable declarations this way, and you never have
     to worry about swapping out a `;` for a `,` or introducing punctuation-only
     diffs.
 
@@ -472,7 +474,7 @@
   - Variable declarations get hoisted to the top of their scope, but their assignment does not.
 
     ```javascript
-    // we know this wouldn"t work (assuming there
+    // we know this wouldn't work (assuming there
     // is no notDefined global variable)
     function example() {
         console.log(notDefined); // => throws a ReferenceError
@@ -632,7 +634,7 @@
     ```
 
   - If you"re using multi-line blocks with `if` and `else`, put `else` on the same line as your
-    `if` block"s closing brace.
+    `if` block's closing brace.
 
     ```javascript
     // bad
@@ -728,7 +730,7 @@
     ```javascript
     function Calculator() {
 
-        // FIXME: shouldn"t use a global here
+        // FIXME: shouldn't use a global here
         total = 0;
 
         return this;
@@ -934,7 +936,7 @@
     };
     ```
 
-  - Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it"s in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
+  - Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
 
   > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
 
@@ -1140,7 +1142,7 @@
     this._firstName = "Panda";
     ```
 
-  - When saving a reference to `this` use `_this`.
+  - When saving a reference to `this` use `that`.
 
     ```javascript
     // bad
@@ -1239,7 +1241,7 @@
     }
     ```
 
-  - It"s okay to create get() and set() functions, but be consistent.
+  - It's okay to create get() and set() functions, but be consistent.
 
     ```javascript
     function Jedi(options) {
@@ -1262,7 +1264,7 @@
 
 ## Constructors
 
-  - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you"ll overwrite the base!
+  - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
     ```javascript
     function Jedi() {
@@ -1325,7 +1327,7 @@
     ```
 
 
-  - It"s okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
+  - It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
 
     ```javascript
     function Jedi(options) {
@@ -1378,7 +1380,7 @@
 
 ## Modules
 
-  - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren"t errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
+  - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
   - The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
   - Add a method called `noConflict()` that sets the exported module to the previous version and returns this one.
   - Always declare `"use strict";` at the top of the module.
